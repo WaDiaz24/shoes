@@ -1,0 +1,62 @@
+<div class="min-h-screen bg-gray-50 flex flex-col items-center py-8 px-4">
+    <h1 class="text-4xl font-bold text-primary mb-8">Finaliza tu compra</h1>
+    
+    <div class="w-full max-w-2xl bg-white rounded-lg shadow-md p-6">
+      <!-- Resumen del producto -->
+      <div class="flex items-center mb-6">
+        <img 
+          [src]="product.image" [alt]="product.name"
+          class="w-24 h-24 object-cover rounded-lg border"
+        />
+        <div class="ml-4">
+          <p class="font-bold text-xl text-gray-800">Zapato Deportivo</p>
+          <p class="text-gray-600">Talla: 42</p>
+          <p class="text-gray-600">Color: Negro</p>
+          <p class="text-gray-800 font-semibold">Precio: $150,000</p>
+        </div>
+      </div>
+  
+      <!-- Información del cliente -->
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Tu información</h2>
+      <form class="space-y-4">
+        <div>
+          <label for="nombre" class="block text-gray-700 font-semibold">Nombre completo</label>
+          <input 
+            type="text" 
+            id="nombre" 
+            placeholder="Tu nombre" 
+            class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label for="direccion" class="block text-gray-700 font-semibold">Dirección</label>
+          <input 
+            type="text" 
+            id="direccion" 
+            placeholder="Tu dirección" 
+            class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label for="telefono" class="block text-gray-700 font-semibold">Teléfono</label>
+          <input 
+            type="tel" 
+            id="telefono" 
+            placeholder="Tu teléfono" 
+            class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div class="text-center">
+          <!-- Botón para enviar a WhatsApp -->
+          <a 
+            href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20comprar%20el%20Zapato%20Deportivo%20Negro%20talla%2042." 
+            target="_blank" 
+            class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow transition"
+          >
+            Completar compra por WhatsApp
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
