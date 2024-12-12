@@ -1,0 +1,47 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+      <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">Contáctanos</h1>
+      <form >
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ngModel
+            required
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+  
