@@ -11,52 +11,52 @@
   </section>
 
   <!-- Productos Destacados -->
-  <section id="productos" class="py-16">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12 text-primary">Productos Destacados</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Producto 1 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="https://i.etsystatic.com/35428788/r/il/30062a/5883368804/il_1080xN.5883368804_l6wt.jpg" alt="Zapato 1" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-primary mb-2">Zapato Deportivo</h3>
-            <p class="text-gray-600 mb-4">Ideal para correr y entrenar.</p>
-            <button class="bg-primary text-white py-2 px-4 rounded hover:bg-blue-800">
-              Comprar Ahora
-            </button>
-          </div>
+  <section id="productos" class="container mx-auto px-4 max-w-6xl py-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-primary">Productos Destacados</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
+      <!-- Products -->
+      <div *ngFor="let product of listOfFeaturedProducts"
+        class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
+
+        <!-- Imagen con efecto -->
+        <div class="relative">
+          <img [src]="product.image" [alt]="product.name" class="w-full h-60 object-cover">
+
+          <!-- Etiqueta de descuento (si aplica) -->
+          <span *ngIf="product.discount > 0"
+            class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded">
+            -{{ product.discount }}%
+          </span>
         </div>
-        <!-- Producto 2 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="https://media.revistagq.com/photos/61c1a2e83a8adbe7b237d793/3:2/w_6891,h_4594,c_limit/GettyImages-1326397440.jpg" alt="Zapato 2" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-primary mb-2">Zapato Casual</h3>
-            <p class="text-gray-600 mb-4">Perfecto para el día a día.</p>
-            <button class="bg-primary text-white py-2 px-4 rounded hover:bg-blue-800">
-              Comprar Ahora
-            </button>
+
+        <!-- Contenido del producto -->
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ product.name }}</h3>
+          <p class="text-gray-500 mb-4">{{ product.description }}</p>
+
+          <!-- Precio con formato -->
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <p *ngIf="product.discount > 0" class="text-red-500 text-lg font-semibold line-through">
+              {{ calculateOriginalPrice(product.price, product.discount) }}
+            </p>
+            <p class="text-gray-800 text-2xl font-bold">{{ product.price }}</p>
           </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="https://http2.mlstatic.com/D_NQ_NP_796423-MLM79311289272_092024-O.webp" alt="Zapato 3" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-primary mb-2">Zapato Formal</h3>
-            <p class="text-gray-600 mb-4">Elegancia y comodidad.</p>
-            <button class="bg-primary text-white py-2 px-4 rounded hover:bg-blue-800">
-              Comprar Ahora
-            </button>
-          </div>
+
+          <!-- Botón de compra -->
+          <button (click)="goToCheckout(product)"
+            class="bg-[#2A9D8F] text-white py-2 px-6 rounded-lg font-semibold shadow-md hover:bg-[#21867A] transition">
+            Comprar Ahora
+          </button>
         </div>
       </div>
+
     </div>
   </section>
-  
+
   <div class="flex flex-col items-center">
     <button routerLink="/products" class="bg-primary text-white py-2 px-4 rounded hover:bg-blue-800 w-30 mx-auto mb-4">
       Ver más productos
     </button>
   </div>
-  
-</div>
 
+</div>
