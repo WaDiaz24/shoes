@@ -1,27 +1,23 @@
-<!-- home.component.html -->
 <div class="font-sans bg-gray-50 text-gray-800">
-
   <!-- Hero Section -->
   <section class="bg-primary text-white text-center py-20 px-6">
     <h2 class="text-4xl font-bold mb-4">¡Encuentra tus zapatos ideales!</h2>
     <p class="text-lg mb-6">Descubre las mejores marcas, los mejores estilos y todo al mejor precio.</p>
-    <a href="#productos" class="bg-white text-primary py-2 px-6 rounded-full font-semibold hover:bg-gray-100">
+    <a href="#products" class="bg-white text-primary py-2 px-6 rounded-full font-semibold hover:bg-gray-100">
       Ver Productos
     </a>
   </section>
 
   <!-- Productos Destacados -->
-  <section id="productos" class="container mx-auto px-4 max-w-6xl py-6">
+  <section id="products" class="container mx-auto px-4 max-w-6xl py-6">
     <h2 class="text-3xl font-bold text-center mb-12 text-primary">Productos Destacados</h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
       <!-- Products -->
       <div *ngFor="let product of listOfFeaturedProducts"
         class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
-
         <!-- Imagen con efecto -->
         <div class="relative">
           <img [src]="product.image" [alt]="product.name" class="w-full h-60 object-cover">
-
           <!-- Etiqueta de descuento (si aplica) -->
           <span *ngIf="product.discount > 0"
             class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded">
@@ -37,9 +33,9 @@
           <!-- Precio con formato -->
           <div class="flex items-center justify-center gap-2 mb-4">
             <p *ngIf="product.discount > 0" class="text-red-500 text-lg font-semibold line-through">
-              {{ calculateOriginalPrice(product.price, product.discount) }}
+              {{ calculateDiscountedPrice(product.price, product.discount) }}
             </p>
-            <p class="text-gray-800 text-2xl font-bold">{{ product.price }}</p>
+            <p class="text-gray-800 text-2xl font-bold">{{ product.price | currency:'USD':'symbol':'1.0-0'}}</p>
           </div>
 
           <!-- Botón de compra -->

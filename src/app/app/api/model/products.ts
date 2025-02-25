@@ -5,9 +5,8 @@ export interface Product {
   model: string;
   category: string;
   description: string;
-
   shoeSize: number;
-  price: string;
+  price: number;
   discount: number;
   stock: number;
 
@@ -23,7 +22,7 @@ export const products: Product[] = [
     category: 'Deportivo',
     description: 'Ideal para correr y entrenar.',
     shoeSize: 42,
-    price: '$150,000 COP',
+    price: 150000,
     discount: 10, // 10% de descuento
     stock: 25,
     image: 'https://i.etsystatic.com/35428788/r/il/30062a/5883368804/il_1080xN.5883368804_l6wt.jpg'
@@ -36,7 +35,7 @@ export const products: Product[] = [
     category: 'Casual',
     description: 'Perfecto para el día a día.',
     shoeSize: 41,
-    price: '$130,000 COP',
+    price: 130000,
     discount: 5, // 5% de descuento
     stock: 15,
     image: 'https://media.revistagq.com/photos/61c1a2e83a8adbe7b237d793/3:2/w_6891,h_4594,c_limit/GettyImages-1326397440.jpg'
@@ -49,7 +48,7 @@ export const products: Product[] = [
     category: 'Formal',
     description: 'Elegancia y comodidad.',
     shoeSize: 43,
-    price: '$120,000 COP',
+    price: 120000,
     discount: 0, // Sin descuento
     stock: 10,
     image: 'https://img.freepik.com/foto-gratis/zapatero-taller-haciendo-zapatos_171337-12252.jpg'
