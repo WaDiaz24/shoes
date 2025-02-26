@@ -25,7 +25,7 @@ export const products: Product[] = [
     price: 150000,
     discount: 10, // 10% de descuento
     stock: 25,
-    image: 'https://i.etsystatic.com/35428788/r/il/30062a/5883368804/il_1080xN.5883368804_l6wt.jpg'
+    image: 'https://www.zapatillascolombia.com/wp-content/uploads/2018/11/tenis-al-por-mayor-en-cali.jpg'
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    name: 'Zapato Formal',
+    name: 'Zapato Casual',
     brand: 'Clarks',
     model: 'Tilden Cap',
     category: 'Formal',
@@ -51,6 +51,6 @@ export const products: Product[] = [
     price: 120000,
     discount: 0, // Sin descuento
     stock: 10,
-    image: 'https://img.freepik.com/foto-gratis/zapatero-taller-haciendo-zapatos_171337-12252.jpg'
+    image: 'https://fenixstore.com.co/wp-content/uploads/2023/08/WhatsApp-Image-2021-01-09-at-18.33.26-1-1.jpeg'
   }
 ];
