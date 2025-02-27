@@ -13,39 +13,7 @@
     <h2 class="text-3xl font-bold text-center mb-12 text-primary">Productos Destacados</h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
       <!-- Products -->
-      <div *ngFor="let product of listOfFeaturedProducts"
-        class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
-        <!-- Imagen con efecto -->
-        <div class="relative">
-          <img [src]="product.image" [alt]="product.name" class="w-full h-60 object-cover">
-          <!-- Etiqueta de descuento (si aplica) -->
-          <span *ngIf="product.discount > 0"
-            class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded">
-            -{{ product.discount }}%
-          </span>
-        </div>
-
-        <!-- Contenido del producto -->
-        <div class="p-6 text-center">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ product.name }}</h3>
-          <p class="text-gray-500 mb-4">{{ product.description }}</p>
-
-          <!-- Precio con formato -->
-          <div class="flex items-center justify-center gap-2 mb-4">
-            <p *ngIf="product.discount > 0" class="text-red-500 text-lg font-semibold line-through">
-              {{ calculateDiscountedPrice(product.price, product.discount) }}
-            </p>
-            <p class="text-gray-800 text-2xl font-bold">{{ product.price | currency:'USD':'symbol':'1.0-0'}}</p>
-          </div>
-
-          <!-- Botón de compra -->
-          <button (click)="goToCheckout(product)"
-            class="button">
-            Comprar Ahora
-          </button>
-        </div>
-      </div>
-
+      <app-product-card *ngFor="let product of listOfFeaturedProducts" [product]="product" [highlight]="true"></app-product-card>
     </div>
   </section>
 

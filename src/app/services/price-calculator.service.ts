@@ -7,8 +7,8 @@ export class PriceCalculatorService {
 
   constructor() { }
 
-  calculateDiscountedPrice(price: number, discount: number): string {
+  calculateDiscountedPrice(price: number, discount: number): number {
     const discountedPrice  = price - (price * discount / 100);
-    return `$${discountedPrice .toFixed(0)}`;
+    return Math.round(discountedPrice);
   }
 }

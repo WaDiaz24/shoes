@@ -36,9 +36,9 @@ export const allProducts: Product[] = [
         description: "Perfectos para tu día a día.",
         shoeSize: 40,
         price: 140000,
-        discount: 8,
+        discount: 0,
         stock: 10,
-        image: "https://leaked.cl/store/8787-medium_default/zapatillas-nike-dunk-low-laser-blue.jpg"
+        image: "https://zshopp.com/wp-content/uploads/2024/05/Tenis-Zapatillas-Adidas-Fashion-Hzywanshi.jpg"
       },
       {
         id: 4,
