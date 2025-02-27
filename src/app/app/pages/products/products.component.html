@@ -3,30 +3,7 @@
     <h1 class="text-3xl font-bold text-center text-primary mb-8">Nuestros Productos</h1>
     <div
       class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-8 lg:px-16 max-w-7xl">
-
-      <div *ngFor="let product of allProducts" class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="relative w-full">
-          <img [src]="product.image" [alt]="product.name" class="h-48 w-full object-cover">
-          <span *ngIf="product.discount > 0"
-            class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded">
-            -{{ product.discount }}%
-          </span>
-        </div>
-        <div class="p-6 text-center">
-          <h3 class="text-lg font-bold text-primary mb-2">{{ product.name }}</h3>
-          <p class="text-gray-600 mb-4 line-clamp-1">{{ product.description }}</p>
-          <div class="flex items-center justify-center gap-2">
-            <p *ngIf="product.discount > 0" class="text-red-500 text-lg font-semibold line-through">
-              {{ product.price | currency:'USD':'symbol':'1.0-0'}}
-            </p>
-            <p class="text-gray-800 text-2xl font-bold">{{ getDiscountPrice(product.price, product.discount)}}</p>
-  
-          </div>
-          <button (click)="goToCheckout(product)" class="button mt-3">
-            Comprar Ahora
-          </button>
-        </div>
-      </div>
+      <app-product-card *ngFor="let product of allProducts" [product]="product"></app-product-card>
     </div>
   </div>
 </div>
