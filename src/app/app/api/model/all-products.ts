@@ -1,0 +1,121 @@
+import { Product } from "./products";
+
+export const allProducts: Product[] = [
+    {
+        id: 1,
+        name: "Zapato Deportivo 1",
+        brand: "Nike",
+        model: "Air Zoom",
+        category: "Deportivo",
+        description: "Ideal para correr y entrenar.",
+        shoeSize: 42,
+        price: 150000,
+        discount: 10,
+        stock: 20,
+        image: "https://i.pinimg.com/736x/c8/4a/2e/c84a2e86f96ad18e0454bdf042689ee1.jpg"
+      },
+      {
+        id: 2,
+        name: "Zapato Deportivo 2",
+        brand: "Adidas",
+        model: "Ultraboost",
+        category: "Deportivo",
+        description: "Comodidad y estilo garantizados.",
+        shoeSize: 41,
+        price: 180000,
+        discount: 5,
+        stock: 15,
+        image: "https://i.pinimg.com/474x/60/5b/06/605b06ee28475d4cbf47b287ebeb42a5.jpg"
+      },
+      {
+        id: 3,
+        name: "Zapato Deportivo 3",
+        brand: "Puma",
+        model: "RS-X",
+        category: "Casual",
+        description: "Perfectos para tu día a día.",
+        shoeSize: 40,
+        price: 140000,
+        discount: 8,
+        stock: 10,
+        image: "https://leaked.cl/store/8787-medium_default/zapatillas-nike-dunk-low-laser-blue.jpg"
+      },
+      {
+        id: 4,
+        name: "Zapato Deportivo 4",
+        brand: "Reebok",
+        model: "Classic Leather",
+        category: "Casual",
+        description: "Ligero y resistente.",
+        shoeSize: 43,
+        price: 130000,
+        discount: 12,
+        stock: 18,
+        image: "https://standshop.com.co/wp-content/uploads/2023/07/418d082e-0094-49e0-bcf9-289df47189ef.jpg"
+      },
+      {
+        id: 5,
+        name: "Zapato Deportivo 5",
+        brand: "New Balance",
+        model: "574",
+        category: "Casual",
+        description: "Estilo casual para todo momento.",
+        shoeSize: 42,
+        price: 160000,
+        discount: 7,
+        stock: 12,
+        image: "https://i0.wp.com/templosneakers.com/wp-content/uploads/2024/05/NIKE-SB-DUNK-AZUL-CELESTE.jpg?fit=600%2C600&ssl=1"
+      },
+      {
+        id: 6,
+        name: "Zapato Deportivo 6",
+        brand: "Nike",
+        model: "React Infinity Run",
+        category: "Deportivo",
+        description: "Diseño ergonómico y cómodo.",
+        shoeSize: 41,
+        price: 170000,
+        discount: 6,
+        stock: 14,
+        image: "https://i5.walmartimages.com/asr/f3c2829b-e24a-499a-8745-3c4d2957229c.182820aaaf9a98b8ae97599186761ac2.jpeg"
+      },
+      {
+        id: 7,
+        name: "Zapato Deportivo 7",
+        brand: "Adidas",
+        model: "Terrex Swift R3",
+        category: "Outdoor",
+        description: "Material resistente al agua.",
+        shoeSize: 44,
+        price: 190000,
+        discount: 15,
+        stock: 10,
+        image: "https://chilangoskate.com/tienda/30146-large_default/tenis-nike-sb-dunk-low-pro-black-white.jpg"
+      },
+      {
+        id: 8,
+        name: "Zapato Deportivo 8",
+        brand: "Puma",
+        model: "Future Rider",
+        category: "Casual",
+        description: "Estilo moderno y elegante.",
+        shoeSize: 40,
+        price: 135000,
+        discount: 5,
+        stock: 22,
+        image: "https://unitedstorecolombia.com/cdn/shop/files/PhotoRoom_20231025_142313.jpg?v=1733855515&width=1946"
+      },
+      {
+        id: 9,
+        name: "Zapato Deportivo 9",
+        brand: "Nike",
+        model: "Dunk Low",
+        category: "Casual",
+        description: "Perfectos para todas las estaciones.",
+        shoeSize: 42,
+        price: 165000,
+        discount: 10,
+        stock: 16,
+        image: "https://www.basketballemotion.com/imagesarticulos/226570/grandes/zapatilla-nike-dunk-low-midnight-navy-lt-smoke-grey-summit-white-0.webp"
+      }
+  ];
