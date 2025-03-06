@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class ProductCardComponent {
   @Input() product!: Product;
-  @Input() highlight?: boolean = false;
   @Input() compact?: boolean = false;
 
   constructor(
