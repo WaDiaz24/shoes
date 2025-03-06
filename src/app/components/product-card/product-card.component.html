@@ -2,8 +2,10 @@
     [ngClass]="{ 'shadow-lg hover:scale-105 hover:shadow-xl transition-transform': highlight }">
 
     <div class="relative w-full">
-        <img [src]="product.image" [alt]="product.name" [ngClass]="compact ? 'h-48' : 'h-60'"
-            class="w-full object-cover">
+        <a (click)="goToProduct(product.id)" class="cursor-pointer">
+            <img [src]="product.image" [alt]="product.name" [ngClass]="compact ? 'h-48' : 'h-60'"
+                class="w-full object-cover">
+        </a>
         <span *ngIf="product.discount > 0"
             class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold py-1 px-2 rounded">
             -{{ product.discount }}%
