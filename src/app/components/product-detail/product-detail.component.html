@@ -1,0 +1,63 @@
+<div class="max-w-5xl mx-auto px-6 py-10 bg-white shadow-lg rounded-lg font-poppins">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Imagen Principal -->
+    <div>
+      <img [src]="product?.image" alt="Producto" class="w-full rounded-lg shadow-lg">
+      <div class="flex flex-wrap gap-2 mt-4">
+        <!-- imagenes de prueba -->
+        <img src="https://i.pinimg.com/736x/5a/88/b1/5a88b128f58aa39b93348f17df248ae3.jpg" alt="Miniatura" class="w-20 h-20 rounded-lg cursor-pointer border border-gray-300 hover:border-blue-500">
+        <img src="https://i.pinimg.com/736x/5a/88/b1/5a88b128f58aa39b93348f17df248ae3.jpg" alt="Miniatura" class="w-20 h-20 rounded-lg cursor-pointer border border-gray-300 hover:border-blue-500">
+        <img src="https://i.pinimg.com/736x/5a/88/b1/5a88b128f58aa39b93348f17df248ae3.jpg" alt="Miniatura" class="w-20 h-20 rounded-lg cursor-pointer border border-gray-300 hover:border-blue-500">
+      </div>
+    </div>
+
+    <!-- Información del Producto -->
+    <div class="w-full mx-auto px-6 py-8 bg-white shadow-lg rounded-lg">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">{{product?.name}}</h1>
+    
+      <!-- Tarjetas de información -->
+      <div class="grid grid-cols-2  md:grid-cols-3 gap-4">
+        <div *ngFor="let detail of details" class="bg-gray-100 p-4 rounded-lg text-center">
+          <p class="text-gray-500 text-sm">{{detail.label}}</p>
+          <p class="text-base font-semibold text-gray-800 break-words">{{detail.value}}</p>
+        </div>
+      </div>
+    
+      <!-- Descripción -->
+      <p class="text-gray-700 mt-6 text-lg">
+        {{product?.description}}
+      </p>
+    
+      <!-- Tallas y stock -->
+      <div class="mt-4 flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+        <div>
+          <p class="text-gray-500 text-sm">Tallas Disponibles</p>
+          <p class="text-lg font-semibold text-gray-800">38, 39, 40, 41, 42</p>
+        </div>
+        <div>
+          <p class="text-gray-500 text-sm">Stock Disponible</p>
+          <p class="text-lg font-semibold text-gray-800">{{product?.stock}} unidades</p>
+        </div>
+      </div>
+    
+      <!-- Precio y descuento -->
+      <div class="mt-6 flex items-center gap-4">
+        <span class="text-gray-500 line-through text-1xl">${{product?.price}}</span>
+        <span class="text-green-600 text-2xl font-semibold">$180,000</span>
+        <span class="bg-red-500 text-white px-3 py-1 rounded-lg text-sm">{{product?.discount}}% OFF</span>
+      </div>
+    
+      <!-- Botones de acción -->
+      <div class="mt-6 flex gap-4">
+        <button class="button">
+          Comprar Ahora
+        </button>
+        <button class="bg-primary button flex items-center gap-2">
+          <span class="material-icons">shopping_cart</span>
+          Agregar al Carrito
+        </button>
+      </div>
+    </div>
+    
+  </div>
+</div>
