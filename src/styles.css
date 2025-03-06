@@ -7,3 +7,5 @@
         @apply bg-[#2A9D8F] text-white py-2 px-6 rounded-lg font-semibold shadow-md hover:bg-[#21867A] transition
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
