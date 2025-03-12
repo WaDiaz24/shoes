@@ -13,6 +13,6 @@ import { ProductCardComponent } from "../../../components/product-card/product-c
 export class ProductsComponent {
   allProducts: Product[] = [];
   ngOnInit(): void {
-    this.allProducts = allProducts
+    this.allProducts = allProducts.slice(3);
   }
 }
