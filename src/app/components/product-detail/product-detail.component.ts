@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../app/api/model/products';
 import { allProducts } from '../../app/api/model/all-products';
+import { PriceCalculatorService } from '../../services/price-calculator.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,7 +17,8 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
-  ) { }
+    private readonly priceCalculator: PriceCalculatorService
+  ) {}
   ngOnInit(): void {
     const productId = Number(this.route.snapshot.paramMap.get('id'));
     // Busca el producto en la lista
@@ -36,9 +38,8 @@ export class ProductDetailComponent implements OnInit {
     ]
   }
 
-
-
-
-
+   getDiscountPrice(price: number, discount: number): number{
+    return this.priceCalculator.calculateDiscountedPrice(price, discount);
+  }
 
 }
