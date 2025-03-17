@@ -2,11 +2,11 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
     <!-- Imagen Principal -->
     <div>
-      <img [src]="product?.image" alt="Producto" class="w-full rounded-lg shadow-lg">
+      <img [src]="product?.image" alt="producto {{product?.name}}" class="w-full aspect-square rounded-lg shadow-lg object-cover">
     </div>
 
     <!-- Información del Producto -->
-    <div class="w-full mx-auto px-6 py-8 bg-white shadow-lg rounded-lg">
+    <section class="w-full mx-auto px-6 py-6 bg-white shadow-lg rounded-lg">
       <h1 class="text-3xl font-bold text-gray-900 mb-4">{{product?.name}}</h1>
 
       <!-- Tarjetas de información -->
@@ -26,7 +26,8 @@
       <div class="mt-4 flex justify-between items-center bg-gray-100 p-4 rounded-lg">
         <div>
           <p class="text-gray-500 text-sm">Tallas Disponibles</p>
-          <p class="text-lg font-semibold text-gray-800">38, 39, 40, 41, 42</p>
+          <p class="text-lg font-semibold text-gray-800">
+            <span *ngFor="let size of product?.shoeSize; let isLast = last" >{{size}}{{isLast ? '': ', '}}</span></p>
         </div>
         <div>
           <p class="text-gray-500 text-sm">Stock Disponible</p>
@@ -53,7 +54,7 @@
           Agregar al Carrito
         </button>
       </div>
-    </div>
+    </section>
 
   </div>
 </div>
