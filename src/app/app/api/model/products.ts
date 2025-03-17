@@ -9,7 +9,7 @@ export interface Product {
   price: number;
   discount: number;
   stock: number;
-
+  color: string
   image: string;
 }
 
