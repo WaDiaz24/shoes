@@ -1,0 +1,60 @@
+<div class="max-w-5xl mx-auto px-6 py-10 bg-white shadow-lg rounded-lg font-poppins">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Imagen Principal -->
+    <div>
+      <img [src]="product?.image" alt="producto {{product?.name}}" class="w-full aspect-square rounded-lg shadow-lg object-cover">
+    </div>
+
+    <!-- Información del Producto -->
+    <section class="w-full mx-auto px-6 py-6 bg-white shadow-lg rounded-lg">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">{{product?.name}}</h1>
+
+      <!-- Tarjetas de información -->
+      <div class="grid grid-cols-2  md:grid-cols-3 gap-4">
+        <div *ngFor="let detail of details" class="bg-gray-100 p-4 rounded-lg text-center">
+          <p class="text-gray-500 text-sm">{{detail.label}}</p>
+          <p class="text-base font-semibold text-gray-800 break-words">{{detail.value}}</p>
+        </div>
+      </div>
+
+      <!-- Descripción -->
+      <p class="text-gray-700 mt-6 text-lg">
+        {{product?.description}}
+      </p>
+
+      <!-- Tallas y stock -->
+      <div class="mt-4 flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+        <div>
+          <p class="text-gray-500 text-sm">Tallas Disponibles</p>
+          <p class="text-lg font-semibold text-gray-800">
+            <span *ngFor="let size of product?.shoeSize; let isLast = last" >{{size}}{{isLast ? '': ', '}}</span></p>
+        </div>
+        <div>
+          <p class="text-gray-500 text-sm">Stock Disponible</p>
+          <p class="text-lg font-semibold text-gray-800">{{product?.stock}} unidades</p>
+        </div>
+      </div>
+
+      <!-- Precio y descuento -->
+      <div class="mt-6 flex items-center gap-4">
+        <span *ngIf="product?.discount ?? 0 > 0" class="text-gray-500 line-through text-1xl">{{product?.price |
+          currency:'USD':'symbol':'1.0-0' }}</span>
+        <span class="text-green-600 text-2xl font-semibold">{{getDiscountPrice(product?.price ?? 0, product?.discount ??
+          0) | currency:'USD':'symbol':'1.0-0' }}</span>
+        <span class="bg-red-500 text-white px-3 py-1 rounded-lg text-sm">{{product?.discount}}% OFF</span>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="mt-6 flex gap-4">
+        <button class="button" (click)="goToCheckout(product)">
+          Comprar Ahora
+        </button>
+        <button class="bg-primary button flex items-center gap-2">
+          <span class="material-icons">shopping_cart</span>
+          Agregar al Carrito
+        </button>
+      </div>
+    </section>
+
+  </div>
+</div>

@@ -7,7 +7,10 @@ module.exports = {
         primary: '#304791',
         secondary: "#66CC99",
         hovered: "#43A047"
-      }
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

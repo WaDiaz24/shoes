@@ -12,13 +12,14 @@ import { Router } from '@angular/router';
 })
 export class ProductCardComponent {
   @Input() product!: Product;
-  @Input() highlight?: boolean = false;
   @Input() compact?: boolean = false;
 
   constructor(
     private readonly priceCalculator: PriceCalculatorService,
     private readonly router: Router
-  ) { }
+  ) {
+   
+   }
 
   getDiscountPrice(price: number, discount: number): number {
     return this.priceCalculator.calculateDiscountedPrice(price, discount);
@@ -26,5 +27,9 @@ export class ProductCardComponent {
 
   goToCheckout(product: any) {
     this.router.navigate(["/purchase"], { state: { product } });
+  }
+
+  goToProduct(productId: number){
+    this.router.navigate(["/product", productId]);
   }
 }
