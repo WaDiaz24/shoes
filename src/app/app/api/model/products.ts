@@ -5,7 +5,7 @@ export interface Product {
   model: string;
   category: string;
   description: string;
-  shoeSize: number;
+  shoeSize: number[];
   price: number;
   discount: number;
   stock: number;
