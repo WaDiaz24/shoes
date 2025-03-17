@@ -1,6 +1,6 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../app/api/model/products';
 import { allProducts } from '../../app/api/model/all-products';
 import { PriceCalculatorService } from '../../services/price-calculator.service';
@@ -17,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
+    private readonly router: Router,
     private readonly priceCalculator: PriceCalculatorService
   ) {}
   ngOnInit(): void {
@@ -40,6 +41,10 @@ export class ProductDetailComponent implements OnInit {
 
    getDiscountPrice(price: number, discount: number): number{
     return this.priceCalculator.calculateDiscountedPrice(price, discount);
+  }
+
+  goToCheckout(product: any) {
+    this.router.navigate(["/purchase"], { state: { product } });
   }
 
 }
