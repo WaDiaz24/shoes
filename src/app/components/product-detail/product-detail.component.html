@@ -49,7 +49,7 @@
         <button class="button" (click)="goToCheckout(product)">
           Comprar Ahora
         </button>
-        <button class="bg-primary button flex items-center gap-2">
+        <button class="bg-primary button flex items-center gap-2" (click)="product && addToCart(product)">
           <span class="material-icons">shopping_cart</span>
           Agregar al Carrito
         </button>
