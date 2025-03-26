@@ -1,0 +1,42 @@
+<!-- Sidebar del Carrito -->
+<div
+  class="fixed top-0 right-0 h-full w-96 bg-white shadow-lg transform transition-transform duration-300 ease-in-out"
+  [class.translate-x-full]="!isSidebarOpen"
+  [class.translate-x-0]="isSidebarOpen"
+>
+  <!-- Encabezado del Sidebar -->
+  <div class="flex justify-between items-center p-4 border-b">
+    <h2 class="text-xl font-bold text-gray-800">Carrito de Compras</h2>
+    <button (click)="toggleSidebar()" class="text-gray-500 hover:text-gray-800">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+
+  <!-- Contenido del Carrito -->
+  <div class="p-4 flex flex-col gap-4">
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+      <div *ngFor="let item of cartItems" class="flex items-center gap-4">
+        <img [src]="item.image" [alt]="item.name" class="w-16 h-16 object-cover rounded-lg border" />
+        <div class="flex-1">
+          <p class="font-bold text-gray-800">{{ item.name }}</p>
+          <p class="text-gray-600">Cantidad: {{ item.quantity }}</p>
+          <p class="text-gray-800 font-semibold">{{ item.price | currency:'USD':'symbol':'1.0-0' }}</p>
+        </div>
+        <button (click)="removeFromCart(item.id)" class="text-red-500 hover:text-red-700">
+          <span class="material-icons">delete</span>
+        </button>
+      </div>
+    </div>
+    <ng-template #emptyCart>
+      <p class="text-gray-600">Tu carrito está vacío.</p>
+    </ng-template>
+  </div>
+
+  <!-- Resumen del Pedido -->
+  <div class="p-4 border-t">
+    <p class="text-gray-800 font-bold">Total: {{ getTotalPrice() | currency:'USD':'symbol':'1.0-0' }}</p>
+    <button class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg mt-4">
+      Proceder al Pago
+    </button>
+  </div>
+</div>

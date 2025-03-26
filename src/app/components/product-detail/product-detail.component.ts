@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../app/api/model/products';
 import { allProducts } from '../../app/api/model/all-products';
 import { PriceCalculatorService } from '../../services/price-calculator.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,7 +19,8 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-    private readonly priceCalculator: PriceCalculatorService
+    private readonly priceCalculator: PriceCalculatorService,
+    private readonly cartService: CartService
   ) {}
   ngOnInit(): void {
     const productId = Number(this.route.snapshot.paramMap.get('id'));
@@ -46,5 +48,9 @@ export class ProductDetailComponent implements OnInit {
   goToCheckout(product: any) {
     this.router.navigate(["/purchase"], { state: { product } });
   }
-
+  
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+    alert('Producto agregado al carrito');
+  }
 }
