@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SidebarService } from '../../../services/sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
+   constructor(private readonly sidebarService: SidebarService){}
+
+   toggleCartSidebar(): void {
+    this.sidebarService.toggleSidebar();
+  }
 
 }
