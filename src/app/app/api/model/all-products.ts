@@ -13,7 +13,8 @@ export const allProducts: Product[] = [
         discount: 10, // 10% de descuento
         stock: 25,
         image: 'https://www.zapatillascolombia.com/wp-content/uploads/2018/11/tenis-al-por-mayor-en-cali.jpg',
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 2,
@@ -27,7 +28,8 @@ export const allProducts: Product[] = [
         discount: 5, // 5% de descuento
         stock: 15,
         image: 'https://media.revistagq.com/photos/61c1a2e83a8adbe7b237d793/3:2/w_6891,h_4594,c_limit/GettyImages-1326397440.jpg',
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 3,
@@ -41,7 +43,8 @@ export const allProducts: Product[] = [
         discount: 0, // Sin descuento
         stock: 10,
         image: 'https://fenixstore.com.co/wp-content/uploads/2023/08/WhatsApp-Image-2021-01-09-at-18.33.26-1-1.jpeg',
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 4,
@@ -55,7 +58,8 @@ export const allProducts: Product[] = [
         discount: 10,
         stock: 20,
         image: "https://i.pinimg.com/736x/c8/4a/2e/c84a2e86f96ad18e0454bdf042689ee1.jpg",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 5,
@@ -69,7 +73,8 @@ export const allProducts: Product[] = [
         discount: 5,
         stock: 15,
         image: "https://i.pinimg.com/474x/60/5b/06/605b06ee28475d4cbf47b287ebeb42a5.jpg",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 6,
@@ -83,7 +88,8 @@ export const allProducts: Product[] = [
         discount: 0,
         stock: 10,
         image: "https://zshopp.com/wp-content/uploads/2024/05/Tenis-Zapatillas-Adidas-Fashion-Hzywanshi.jpg",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 7,
@@ -97,7 +103,8 @@ export const allProducts: Product[] = [
         discount: 12,
         stock: 18,
         image: "https://standshop.com.co/wp-content/uploads/2023/07/418d082e-0094-49e0-bcf9-289df47189ef.jpg",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 8,
@@ -111,7 +118,8 @@ export const allProducts: Product[] = [
         discount: 7,
         stock: 12,
         image: "https://i0.wp.com/templosneakers.com/wp-content/uploads/2024/05/NIKE-SB-DUNK-AZUL-CELESTE.jpg?fit=600%2C600&ssl=1",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 9,
@@ -125,7 +133,8 @@ export const allProducts: Product[] = [
         discount: 6,
         stock: 14,
         image: "https://i5.walmartimages.com/asr/f3c2829b-e24a-499a-8745-3c4d2957229c.182820aaaf9a98b8ae97599186761ac2.jpeg",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 10,
@@ -139,7 +148,8 @@ export const allProducts: Product[] = [
         discount: 15,
         stock: 10,
         image: "https://chilangoskate.com/tienda/30146-large_default/tenis-nike-sb-dunk-low-pro-black-white.jpg",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 11,
@@ -153,7 +163,8 @@ export const allProducts: Product[] = [
         discount: 5,
         stock: 22,
         image: "https://unitedstorecolombia.com/cdn/shop/files/PhotoRoom_20231025_142313.jpg?v=1733855515&width=1946",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     },
     {
         id: 12,
@@ -167,6 +178,7 @@ export const allProducts: Product[] = [
         discount: 10,
         stock: 16,
         image: "https://www.basketballemotion.com/imagesarticulos/226570/grandes/zapatilla-nike-dunk-low-midnight-navy-lt-smoke-grey-summit-white-0.webp",
-        color: 'Azul'
+        color: 'Azul',
+        quantity: 2
     }
 ];
