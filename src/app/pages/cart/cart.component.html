@@ -1,11 +1,8 @@
 <!-- Sidebar del Carrito -->
-<div
-  class="fixed top-0 right-0 h-full w-96 bg-white shadow-lg transform transition-transform duration-300 ease-in-out"
-  [class.translate-x-full]="!isSidebarOpen"
-  [class.translate-x-0]="isSidebarOpen"
->
+<div class="fixed top-0 right-0 h-full w-96 bg-white shadow-lg  transition-transform duration-500 ease-in-out"
+  [class.translate-x-full]="!isSidebarOpen" [class.translate-x-0]="isSidebarOpen">
   <!-- Encabezado del Sidebar -->
-  <div class="flex justify-between items-center p-4 border-b">
+  <div class="flex justify-between p-4 border-b">
     <h2 class="text-xl font-bold text-gray-800">Carrito de Compras</h2>
     <button (click)="toggleSidebar()" class="text-gray-500 hover:text-gray-800">
       <span class="material-icons">close</span>
@@ -13,14 +10,19 @@
   </div>
 
   <!-- Contenido del Carrito -->
-  <div class="p-4 flex flex-col gap-4">
+  <div class="p-4 gap-4">
     <div *ngIf="cartItems.length > 0; else emptyCart">
-      <div *ngFor="let item of cartItems" class="flex items-center gap-4">
+      <div *ngFor="let item of cartItems" class="flex border-b p-2 gap-4">
         <img [src]="item.image" [alt]="item.name" class="w-16 h-16 object-cover rounded-lg border" />
         <div class="flex-1">
           <p class="font-bold text-gray-800">{{ item.name }}</p>
-          <p class="text-gray-600">Cantidad: {{ item.quantity }}</p>
-          <p class="text-gray-800 font-semibold">{{ item.price | currency:'USD':'symbol':'1.0-0' }}</p>
+          <div class="flex items-center gap-2">
+            <label for="quantity-{{ item.id }}" class="text-gray-600">Cantidad:</label>
+            <input id="quantity-{{ item.id }}" type="number" class="w-16 border rounded px-2 py-1"
+              [(ngModel)]="item.quantity" (change)="updateQuantity(item)" [value]="1" min="1" />
+            <span class="text-gray-600">unidades</span>
+          </div>
+          <p class="text-gray-800 font-semibold">{{ item.price * item.quantity | currency:'USD':'symbol':'1.0-0' }}</p>
         </div>
         <button (click)="removeFromCart(item.id)" class="text-red-500 hover:text-red-700">
           <span class="material-icons">delete</span>
