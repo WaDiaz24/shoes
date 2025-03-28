@@ -1,0 +1,8 @@
+/* Estilo para las flechas horizontales */
+input[type="number"]::-webkit-inner-spin-button {
+    transform: rotate(90deg); /* Rota las flechas 90 grados */
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button {
+    transform: rotate(90deg); /* Rota las flechas 90 grados */
+  }
