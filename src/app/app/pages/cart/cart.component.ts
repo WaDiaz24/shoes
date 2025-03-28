@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CartService } from '../../services/cart.service';
-import { Product } from '../../app/api/model/products';
-import { SidebarService } from '../../services/sidebar.service';
+import { CartService } from '../../../services/cart.service';
+import { Product } from '../../api/model/products';
+import { SidebarService } from '../../../services/sidebar.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./app/pages/home/home.component";
 import { FooterComponent } from "./app/layout/footer/footer.component";
 import { HeaderComponent } from "./app/layout/header/header.component";
-import { CartComponent } from "./pages/cart/cart.component";
+import { CartComponent } from "./app/pages/cart/cart.component";
 
 @Component({
   selector: 'app-root',
